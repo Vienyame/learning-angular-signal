@@ -1,0 +1,8 @@
+<form >
+    <input #taskInput type="text" placeholder="Task name" />
+    <button type="submit" (click)="addTask(taskInput.value)">Add Task</button>
+</form>
+
+<ul>
+    <li *ngFor="let task of tasks">{{task}}</li>
+</ul>
