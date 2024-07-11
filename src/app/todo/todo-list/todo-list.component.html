@@ -1,0 +1,14 @@
+<app-todo-item
+    class="mb-1"
+    *ngFor="let todoItem of todoItems(); trackBy: todoItemsTrackBy"
+    [todoItem]="todoItem"
+    (delete)="deleteTodoItem($event)"
+    (edit)="editTodoItem($event)"
+    (isCompletedChange)="isCompletedChange($event)"></app-todo-item>
+
+<form [formGroup]="formGroup" (submit)="onSaveTodo()">
+    <mat-form-field class="todo-form-field" appearance="fill"
+        ><mat-label>Todo Name</mat-label><input matInput type="text" formControlName="name" />
+    </mat-form-field>
+    <button mat-button color="primary" type="submit" [disabled]="formGroup.invalid">Save</button>
+</form>
