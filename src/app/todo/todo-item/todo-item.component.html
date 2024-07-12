@@ -1,1 +1,17 @@
 
+<mat-card class="pl-2">
+    <div class="flex justify-between items-center gap-4">
+        <div [class.line-through]="todoItem.isCompleted">
+            {{ todoItem.name }}
+        </div>
+        <div class="flex items-center">
+            <mat-checkbox color="primary" [formControl]="isCompletedFormControl"></mat-checkbox>
+            <button mat-icon-button (click)="onDelete()">
+                <mat-icon color="warn" fontIcon="delete"></mat-icon>
+            </button>
+            <button mat-icon-button (click)="onEdit()">
+                <mat-icon color="accent" fontIcon="edit"></mat-icon>
+            </button>
+        </div>
+    </div>
+</mat-card>
